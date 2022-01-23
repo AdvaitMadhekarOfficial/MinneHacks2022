@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %} Create MailU {% endblock %}
+{% block content %}
+<form method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Subject</label>
+    <input id="subject" name="subject" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Text</label>
+    <input id="text" name="text" type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Recipient</label>
+    <input id="reciepient" name="reciepient" type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{%endblock %}

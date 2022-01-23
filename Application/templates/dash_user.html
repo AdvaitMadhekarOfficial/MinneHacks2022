@@ -1,0 +1,48 @@
+{% extends "mails.html" %}
+{% block title %} User Dashboard {% endblock %}
+{% block content %}
+<h1> Welcome {{user.username}}! </h1>
+<h1> MailU sent to you! </h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date and Time</th>
+      <th scope="col">Author</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Text</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for mail in mails_get %}
+    <tr>
+      <th scope="row">{{mail.date_created}}</th>
+      <td>{{mail.user.username}}</td>
+      <td>{{mail.subject}}</td>
+      <td>{{mail.text}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<h1> MailU that you have sent </h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date and Time</th>
+      <th scope="col">Recipient</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Text</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for mail in mails_sent %}
+    <tr>
+      <th scope="row">{{mail.date_created}}</th>
+      <td>{{mail.reciepient}}</td>
+      <td>{{mail.subject}}</td>
+      <td>{{mail.text}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%endblock %}
+
